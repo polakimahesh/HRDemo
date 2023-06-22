@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface AttendanceRepository extends JpaRepository<Attendance,Integer> {
 //    List<Attendance> findByDateBetween(LocalDateTime dateStart, LocalDateTime dateEnd);
-    List<Attendance> findByUserId(int userId);
+    List<Attendance> findByUserId(int userId); //maheshdjkhf
     List<Attendance> findByUserIdAndDateBetween(int userId,LocalDateTime dateStart, LocalDateTime dateEnd);
     @Query(value = "select * from attendance a where Date(a.date) = :date and a.user_id =:userId", nativeQuery = true)
     Attendance findByUserIdAndDate(@Param("userId") int userID,@Param("date") LocalDate date);
